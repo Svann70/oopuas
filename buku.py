@@ -1,9 +1,9 @@
 from item import ItemPerpustakaan, Penulis
 
 class Buku(ItemPerpustakaan):
-    def __init__(self, penulis: Penulis, judul, id_item):
+    def __init__(self, id_item, judul, penulis: Penulis):
         self.penulis = penulis
-        super().__init__(judul, id_item)
+        super().__init__(id_item, judul)
 
     def deskripsi(self):
-        print(f"ID Item: {self.getID()}, Judul: {self.getJudul()}, Penulis: {self.penulis}, Kewarganegaraan: {self.penulis.kewarganegaraan}")
+        return (f"[{self.getID()}   ] Buku: {self.getJudul()}  |  {self.penulis.nama}({self.penulis.kewarganegaraan})")

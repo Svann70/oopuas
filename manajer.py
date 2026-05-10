@@ -22,9 +22,9 @@ class ManajerPerpustakaan:
                 print('ID SUDAH DIGUNAKAN!')
                 return
             
-            judul = input('Masukkan Judul: ')
+            judul = (input('Masukkan Judul: '))
             nama_penulis = input("Masukkan Nama Penulis : ")
-            negara = input("Masukkan Kewarganegaraan Penulis : ")
+            negara = (input("Masukkan Kewarganegaraan Penulis : "))
 
             penulis = Penulis(nama_penulis, negara)
             buku = Buku(id_baru, judul, penulis)
@@ -33,19 +33,21 @@ class ManajerPerpustakaan:
 
             print("Buku berhasil ditambahkan!")
 
-        except:
+        except ValueError:
             print("Input ID harus berupa angka!")
 
     def tampilkan_koleksi(self):
         print("=== DAFTAR KOLEKSI BUKU ===")
+        print("ID  |    Informasi Buku")
+        print("----------------------------")
 
         if len(self.koleksi) == 0:
             print("Belum ada buku.")
             return
 
         for buku in self.koleksi:
-            print("----------------------------")
-            print(buku.deskripsi())  
+            print(buku.deskripsi())
+    
 
     # bubble sort
     def urutkan_koleksi(self):
