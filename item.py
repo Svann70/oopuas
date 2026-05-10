@@ -14,7 +14,7 @@ class ItemPerpustakaan(ABC):
     def getID(self):
        return self.id_item
     
-    def getJudul(self,judul):
+    def getJudul(self):
        return self.__judul
     
 class Penulis:
