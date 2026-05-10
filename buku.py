@@ -6,4 +6,4 @@ class Buku(ItemPerpustakaan):
         super().__init__(id_item, judul)
 
     def deskripsi(self):
-        return (f"[{self.getID()}   ] Buku: {self.getJudul()}  |  {self.penulis.nama}({self.penulis.kewarganegaraan})")
+        return f"[{self.getID()}   ] Buku: {self.getJudul()}  |  {self.penulis.nama}({self.penulis.kewarganegaraan})"

@@ -55,7 +55,7 @@ class ManajerPerpustakaan:
 
         for i in range(n):
             for j in range(0, n - i - 1):
-                if self.koleksi[j].get_id() > self.koleksi[j + 1].get_id():
+                if self.koleksi[j].getID() > self.koleksi[j + 1].getID():
 
                     # gantian
                     self.koleksi[j], self.koleksi[j + 1] = (
@@ -80,18 +80,18 @@ class ManajerPerpustakaan:
         while kiri <= kanan:
             mid = (kiri + kanan) // 2
 
-            if self.koleksi[mid].get_id() == id_target:
-                print("=== BUKU DITEMUKAN ===")
-                print(self.koleksi[mid].deskripsi())
+            if self.koleksi[mid].getID() == id_target:
+                buku = self.koleksi[mid]
+                print(f"[DITEMUKAN] Buku: {buku.getJudul()} | Penulis: {buku.penulis.nama}")
+                print(f"Detail Penulis: {buku.penulis.nama} ({buku.penulis.kewarganegaraan})")
                 return
 
-            elif self.koleksi[mid].get_id() < id_target:
+            elif self.koleksi[mid].getID() < id_target:
                 kiri = mid + 1
 
             else:
                 kanan = mid - 1
-
-        print("Buku tidak ditemukan.")
+        print("Buku tidak ditemukan")
 
 
 

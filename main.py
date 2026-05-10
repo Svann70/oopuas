@@ -28,11 +28,8 @@ def main():
                 hasil = manager.cari_buku(id_cari)
 
                 if hasil:
-                    print("Ditemukan:")
                     print(hasil.deskripsi())
-                else:
-                    print("Buku tidak ditemukan.")
-
+    
             except ValueError:
                 print("ID harus angka.")
 
