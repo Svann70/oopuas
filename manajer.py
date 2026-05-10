@@ -71,8 +71,8 @@ class ManajerPerpustakaan:
 
         if not self.terurut:
             print("Data belum terurut.")
-            print("Sistem akan melakukan sorting terlebih dahulu...")
-            self.urutkan_koleksi()
+            print(f"ID {id_target} tidak ditemukan")
+            return
 
         kiri = 0
         kanan = len(self.koleksi) - 1
